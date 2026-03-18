@@ -3,191 +3,506 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stoke Sessions – Drift Coloring Book</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
+  <title>Stoke Sessions – Drift Edition Vol. 1</title>
+  <meta name="description" content="Stoke Sessions – Drift Edition Vol. 1 brings high-detail competition drift machines to life in bold, clean line art made for true enthusiasts." />
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9klbfy0iME7l0MPp3nEFfwfBMzJzngUiAKStIYLecurQWZK8GzKBJcBsHSke8Xz4Vy4gB4ec8DfYQ0iGDsoagGgtK99jXvkeVDyMv-zLXMI1TAbhXGeUmUIINlf6N1wSct2UlW2rNJxG6QTfg_rEm27gYlKrvDDH7-NjfiqoQwwHsRSZ9MT_RykfhIZP22BKXFNaHvpYswo5BDkv3erky9qyRxNuYjrFpeelhVaWwDxm83D7apxJqAyjuE71HiXAIBCurjUgr7oe8on3fU4hEQ" charset="UTF-8"></script><style>
+    :root{
+      --bg:#0b0b0b;
+      --bg-soft:#131313;
+      --panel:#171717;
+      --line:#2a2a2a;
+      --text:#ffffff;
+      --muted:#d6d6d6;
+      --soft:#a6a6a6;
+      --yellow:#f4c400;
+      --red:#c9252d;
+      --white:#ffffff;
+      --max:1180px;
+      --radius:22px;
+      --shadow:0 14px 40px rgba(0,0,0,.32);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+    .section{padding:64px 0}
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(201,37,45,.16);
+      color:#ffd7da;
+      border:1px solid rgba(201,37,45,.35);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .hero{
+      background:
+        radial-gradient(circle at top left, rgba(201,37,45,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(244,196,0,.14), transparent 24%),
+        linear-gradient(180deg,#090909 0%, #111 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
+    h1{
+      margin:18px 0 16px;
+      font-size:clamp(40px, 6vw, 72px);
+      line-height:.96;
+      letter-spacing:-.04em;
+      font-weight:900;
+      color:var(--white);
+      text-transform:uppercase;
+    }
+    h2{
+      margin:0 0 16px;
+      font-size:clamp(30px, 4.2vw, 52px);
+      line-height:1.02;
+      letter-spacing:-.03em;
+      font-weight:900;
+      color:var(--white);
+      text-transform:uppercase;
+    }
+    h3{
+      margin:0;
+      font-size:22px;
+      line-height:1.15;
+      color:var(--white);
+    }
+    .lede{
+      font-size:20px;
+      color:var(--muted);
+      max-width:700px;
+    }
+    .hero-card,
+    .image-card,
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card img{width:100%; height:auto}
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:16px;
+      font-weight:800;
+      font-size:16px;
+      transition:.18s ease;
+    }
+    .btn-primary{
+      background:var(--yellow);
+      color:#111;
+    }
+    .btn-primary:hover{transform:translateY(-1px); filter:brightness(1.03)}
+    .btn-secondary{
+      background:#1c1c1c;
+      border:1px solid #343434;
+      color:var(--white);
+    }
+    .btn-secondary:hover{background:#232323}
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#171717;
+      border:1px solid #2d2d2d;
+      color:#ededed;
+      font-size:14px;
+      font-weight:700;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:34px;
+      align-items:start;
+    }
+    .copy p{margin:0 0 18px}
+    .copy strong{color:var(--white)}
+    .feature-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+    }
+    .feature-list li{
+      padding:12px 0;
+      border-bottom:1px solid #242424;
+      color:var(--muted);
+      font-size:19px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .feature-list li span{
+      color:var(--yellow);
+      font-weight:900;
+      margin-top:1px;
+    }
+    .quote{
+      margin-top:26px;
+      padding:24px;
+      border-radius:20px;
+      background:linear-gradient(180deg,#171717 0%, #111 100%);
+      border:1px solid #2b2b2b;
+    }
+    .quote .big{
+      margin:0;
+      font-size:34px;
+      line-height:1.06;
+      font-weight:900;
+      color:var(--white);
+      font-style:italic;
+    }
+    .quote .big + .big{color:#ffe066}
+    .quote .sub{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:19px;
+    }
+    .preview-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      margin-top:28px;
+    }
+    .preview-card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .preview-card img{
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      background:#fff;
+    }
+    .preview-card .meta{
+      padding:16px 16px 18px;
+    }
+    .preview-card p{
+      margin:8px 0 0;
+      color:var(--soft);
+      font-size:14px;
+    }
+    .brand-band{
+      background:linear-gradient(180deg,#111 0%, #0c0c0c 100%);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .brand-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:34px;
+      align-items:center;
+    }
+    .two-up{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:22px;
+    }
+    .mini{
+      padding:20px;
+      border-radius:18px;
+      background:#171717;
+      border:1px solid #2a2a2a;
+    }
+    .mini h4{
+      margin:0 0 8px;
+      color:var(--white);
+      font-size:20px;
+    }
+    .mini p{
+      margin:0;
+      color:var(--muted);
+    }
+    .cta-band{
+      background:linear-gradient(135deg, #f4c400 0%, #f0ab00 100%);
+      color:#111;
+    }
+    .cta-band h2,.cta-band p{color:#111}
+    .cta-center{text-align:center}
+    .cta-center p{max-width:760px;margin:0 auto}
+    .email-form{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:28px;
+    }
+    input[type="email"]{
+      min-width:280px;
+      flex:1 1 320px;
+      max-width:420px;
+      min-height:54px;
+      padding:0 16px;
+      border-radius:16px;
+      border:1px solid #383838;
+      background:#121212;
+      color:#fff;
+      font-size:16px;
+    }
+    .notify .btn-primary{
+      background:var(--red);
+      color:#fff;
+    }
+    footer{
+      padding:26px 0 34px;
+      border-top:1px solid var(--line);
+      color:#9e9e9e;
+      font-size:14px;
+      background:#080808;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .links a{color:#cfcfcf}
+    .links a:hover{color:#fff}
+    .note{
+      color:#8a8a8a;
+      font-size:14px;
+      margin-top:12px;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+    @media (max-width: 980px){
+      .hero-grid,
+      .split,
+      .brand-grid{
+        grid-template-columns:1fr;
+      }
+      .preview-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
     }
-
-    h1, h2 {
-      margin: 0 0 10px;
-    }
-
-    p {
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      padding: 60px 20px;
-    }
-
-    .hero img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #facc15;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-
-    .section {
-      padding: 60px 20px;
-      border-top: 1px solid #222;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      display: block;
-    }
-
-    .card h3 {
-      padding: 10px;
-    }
-
-    ul {
-      margin-top: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .highlight {
-      background: #111;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    footer {
-      padding: 30px;
-      text-align: center;
-      color: #777;
-      border-top: 1px solid #222;
+    @media (max-width: 640px){
+      .section{padding:48px 0}
+      .wrap{width:min(var(--max), calc(100% - 22px))}
+      .preview-grid{grid-template-columns:1fr}
+      .two-up{grid-template-columns:1fr}
+      .lede{font-size:18px}
+      .quote .big{font-size:28px}
     }
   </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="container hero">
-  <div>
-    <h1>DRIFT CAR COLORING BOOK</h1>
-    <p>Realistic competition drift cars, track scenes, and bold clean line art for true enthusiasts.</p>
-    <a href="#" class="btn">Buy on Amazon</a>
-  </div>
+  <header class="hero section">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Stoke Sessions • Now Live</span>
+        <h1>Drift Car Coloring Book for Adults</h1>
+        <p class="lede">
+          Realistic competition drift cars, track scenes, cockpit details, and bold clean line art made for true enthusiasts.
+        </p>
 
-  <img src="cover.webp" alt="Book Cover">
-</div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-secondary" href="#inside">See Inside the Book</a>
+        </div>
 
-<!-- BACK COVER COPY -->
-<div class="container section">
-  <h2>DRIFT IS CONTROLLED CHAOS.</h2>
+        <div class="chips">
+          <div class="chip">Single-sided pages</div>
+          <div class="chip">Drift culture inspired</div>
+          <div class="chip">Built-In Tempo label</div>
+        </div>
+      </div>
 
-  <p>
-    <strong>Stoke Sessions – Drift Edition Vol. 1</strong> brings high-detail competition drift machines to life in bold, clean line art made for true enthusiasts.
-  </p>
-
-  <ul>
-    <li>Widebody competition builds</li>
-    <li>Tandem battles and tight formations</li>
-    <li>Wall rides inches from disaster</li>
-    <li>Pit lane and grid moments</li>
-    <li>Single-sided pages for serious coloring</li>
-  </ul>
-
-  <div class="highlight">
-    <strong>No shading. No clutter.</strong><br>
-    <strong>Just pure drift energy.</strong>
-  </div>
-</div>
-
-<!-- BACK COVER IMAGE -->
-<div class="container section">
-  <img src="back.webp" style="width:100%; max-width:500px;">
-</div>
-
-<!-- PREVIEW -->
-<div class="container section">
-  <h2>Preview Pages</h2>
-
-  <div class="grid">
-    <div class="card">
-      <img src="cockpit.webp">
-      <h3>Cockpit Detail</h3>
+      <div class="hero-card">
+        <img src="cover.webp" alt="Stoke Sessions Drift Car Coloring Book cover">
+      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <img src="driver.webp">
-      <h3>Driver Focus</h3>
+  <section class="section">
+    <div class="wrap split">
+      <div class="copy">
+        <span class="eyebrow">From the back cover</span>
+        <h2>Drift Is Controlled Chaos.</h2>
+        <p class="lede" style="font-size:24px; max-width:760px;">
+          <strong>Stoke Sessions – Drift Edition Vol. 1</strong> brings high-detail competition drift machines to life in bold, clean line art made for true enthusiasts.
+        </p>
+
+        <p style="font-size:26px; font-weight:800; color:#fff; margin-top:28px; margin-bottom:8px;">Inside you’ll find:</p>
+        <ul class="feature-list">
+          <li><span>•</span>Widebody competition builds</li>
+          <li><span>•</span>Tandem battles and tight formations</li>
+          <li><span>•</span>Wall rides inches from disaster</li>
+          <li><span>•</span>Pit lane and grid moments</li>
+          <li><span>•</span>Single-sided pages for serious coloring</li>
+        </ul>
+
+        <div class="quote">
+          <p class="big">No shading. No clutter.</p>
+          <p class="big">Just pure drift energy.</p>
+          <div class="sub">
+            A Stoke Sessions Series<br>
+            Created under the <strong>Built-In Tempo</strong> label<br>
+            <span style="display:inline-block; margin-top:8px; letter-spacing:.14em; text-transform:uppercase; color:#8f8f8f; font-size:14px;">Many Niches. One Rhythm.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-card">
+        <img src="back.webp" alt="Back cover art with drift track lines">
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="staging.webp">
-      <h3>Track Scene</h3>
+  <section class="section" id="inside" style="background:#101010; border-top:1px solid #232323; border-bottom:1px solid #232323;">
+    <div class="wrap">
+      <span class="eyebrow">Preview the pages</span>
+      <h2>Clean line art with real drift flavor.</h2>
+      <p class="lede" style="max-width:900px;">
+        Cockpit details, driver-focused scenes, staging moments, and perspective-heavy drift action that actually feels enthusiast-made.
+      </p>
+
+      <div class="preview-grid">
+        <article class="preview-card">
+          <img src="cockpit.webp" alt="Cockpit interior coloring page preview">
+          <div class="meta">
+            <h3>Cockpit Detail</h3>
+            <p>Interior-focused line art with seat, shifter, cage, and controls.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <img src="driver.webp" alt="Driver focus coloring page preview">
+          <div class="meta">
+            <h3>Driver Focus</h3>
+            <p>Helmet-on intensity and clean, bold shapes built to color well.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <img src="staging.webp" alt="Staging lane coloring page preview">
+          <div class="meta">
+            <h3>Track Scene</h3>
+            <p>Starting line attitude with crew, stance, and event atmosphere.</p>
+          </div>
+        </article>
+
+        <article class="preview-card">
+          <img src="pov.webp" alt="POV drift action coloring page preview">
+          <div class="meta">
+            <h3>POV Action</h3>
+            <p>Perspective-heavy drift driving from inside the cockpit.</p>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="pov.webp">
-      <h3>POV Action</h3>
+  <section class="brand-band section">
+    <div class="wrap brand-grid">
+      <div class="image-card">
+        <img src="social.webp" alt="Promotional drift artwork with partial coloring">
+      </div>
+
+      <div>
+        <span class="eyebrow">Brand style</span>
+        <h2>Built for real enthusiasts — not generic stock art.</h2>
+        <p class="lede">
+          The page styling pulls from your actual book assets: black background, red accents, bold white typography, and high-contrast drift visuals.
+        </p>
+
+        <div class="two-up">
+          <div class="mini">
+            <h4>Giftable</h4>
+            <p>A strong buy for car enthusiasts, adults who like to color, and anyone into drift culture.</p>
+          </div>
+          <div class="mini">
+            <h4>Series-ready</h4>
+            <p>Positioned as Volume 1 so the page can support future Stoke Sessions releases later.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- BRAND IMAGE -->
-<div class="container section">
-  <h2>Built for Real Car Enthusiasts</h2>
-  <p>This isn’t generic clip art. This is drift culture turned into art.</p>
+  <section class="cta-band section">
+    <div class="wrap cta-center">
+      <span class="eyebrow" style="background:rgba(0,0,0,.08); border-color:rgba(0,0,0,.14); color:#3c3200;">Available now</span>
+      <h2 style="margin-top:16px;">Grab your copy of Stoke Sessions – Drift Edition Vol. 1</h2>
+      <p class="lede" style="margin-top:10px; color:#1d1d1d;">
+        Replace the button below with your live Amazon product link and you’re ready to drive traffic here from social posts, bios, and ads.
+      </p>
+      <div class="cta-row" style="justify-content:center; margin-top:26px;">
+        <a class="btn btn-secondary" style="background:#111; color:#fff; border-color:#111;" href="#" target="_blank" rel="noopener">Buy the Book on Amazon</a>
+        <a class="btn" style="background:rgba(255,255,255,.35); color:#111; border:1px solid rgba(0,0,0,.1);" href="#notify">Get Bonus Updates</a>
+      </div>
+    </div>
+  </section>
 
-  <img src="social.webp" style="width:100%; max-width:600px;">
-</div>
+  <section class="section notify" id="notify">
+    <div class="wrap" style="text-align:center; max-width:860px;">
+      <span class="eyebrow">Stay connected</span>
+      <h2 style="margin-top:16px;">Want bonus pages, future books, and submission opportunities?</h2>
+      <p class="lede" style="margin:0 auto;">
+        Keep the page working after the Amazon purchase by collecting emails for future Stoke Sessions drops.
+      </p>
 
-<!-- CTA -->
-<div class="container section" style="text-align:center;">
-  <h2>Get Your Copy</h2>
-  <a href="#" class="btn">Buy the Book on Amazon</a>
-</div>
+      <form class="email-form" action="#" method="post">
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
+        <button class="btn btn-primary" type="submit">Join the List</button>
+      </form>
+      <div class="note">Hook this form to your email platform later, or replace it with your preferred signup link.</div>
+    </div>
+  </section>
 
-<footer>
-  Built-In Tempo • Stoke Sessions
-</footer>
+  <footer>
+    <div class="wrap footer-row">
+      <div>© 2026 Built-In Tempo • Stoke Sessions</div>
+      <div class="links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Amazon</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
